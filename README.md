@@ -16,13 +16,22 @@ How to view
 1. Clone the repository:
 
    git clone https://github.com/summsum1203/Accessible-Form-UI.git
-2. Open index.html in your browser (no build step required).
+2. Open accessibleFormUI.html in your browser (no build step required).
 
 What you'll find
 
-- index.html — the static form UI (Full name, Email, Password, Confirm Password, password-visibility toggle control, completeness progress bar, and checklist).
-- styles.css — the CSS used to create accessible focus, visual structure, and responsive layout.
-- assets/ — optional images or icons used by the UI (if present).
+- accessibleFormUI.html — the static form UI (Full name, Email, Password, Confirm Password, password-visibility toggle control, completeness progress bar, and checklist).
+- style.css — the CSS used to create accessible focus, visual structure, and responsive layout.
+- assets/demo.gif — a small demo GIF showing the UI in action (placeholder).
+- TESTING.md — detailed accessibility testing notes and suggested checks.
+
+Demo
+
+A short demo GIF is included in this repository at `assets/demo.gif` to illustrate the form UI and focus states. The GIF is a visual aid only; it does not change the static nature of the component.
+
+Testing & Accessibility notes
+
+Detailed testing guidance is available in `TESTING.md`. It covers automated tooling (axe, Lighthouse, Pa11y), manual testing with screen readers (VoiceOver, NVDA, TalkBack), keyboard-only navigation checks, and color-contrast verification steps. Please consult that document when evaluating or extending the UI.
 
 Accessibility goals and guidelines
 
@@ -43,13 +52,6 @@ Form details (static)
 - Toggle: Visual button to indicate show/hide password state (not functional in this version)
 - Progress: A completeness progress bar showing how many checklist criteria are met (static visuals)
 - Checklist: A visible list of requirements (e.g., password length, uppercase, number, match) presented as checkable items in the UI (static)
-
-Testing suggestions
-
-- Run automated checks with Lighthouse and axe-core for guidance.
-- Test keyboard navigation (Tab / Shift+Tab) and focus order.
-- Inspect semantic associations between labels and inputs.
-- Use a screen reader (NVDA, VoiceOver, or TalkBack) to verify the reading order and announcements.
 
 Contributing
 
