@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device==width, initial-scale=1.0">
+	<title>Accessibler Form UI</title>
+</head>
+<body>
+	<form class="form" aria-labelledby="form-title">
+		<h2 id="form-title">Create Your Account</h2>
+	
+		<div class="form-group">
+			<label for="full-name">Full Name</label>
+			<input id="full-name" type="text" aria-required="true">
+		</div>
+		
+		<div class="form-group">
+			<label for="email">Email Address"</label>
+			<input id="email" type="email" aria-required="true">
+		</div>
+		
+		<div class="form-group password-group">
+			<label for="password">Password</label>
+			<input id="password" type="password" aria-required="true">
+			<button type="button" class="toggle-password">
+				Show password
+			</button>
+		</div>
+		
+		<div class="progress-container">
+			<label for="progress">Form Completeness</label>
+			<progress id="progress" value="0" max="100"></progress>
+		</div>
+		
+		<ul class="requirements">
+			<li>Password must be 8+ characters</li>
+			<li>Password must include a number</li>
+			<li>Passwords must match</li>
+		</ul>
+		
+		<button type="submit" disabled>Create Account</button>
+	</form>
+		
+</html>
