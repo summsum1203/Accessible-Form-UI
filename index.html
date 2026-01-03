@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accessible Form UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <form class="form" aria-labelledby="form-title" novalidate>
+      <h2 id="form-title">Create Your Account</h2>
+
+      <div class="form-group">
+        <label for="full-name">Full name</label>
+        <input id="full-name" name="fullName" type="text" required aria-required="true" aria-describedby="full-name-help full-name-error" />
+        <p id="full-name-help" class="help">Enter your full name as you want it to appear.</p>
+        <p id="full-name-error" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" required aria-required="true" aria-describedby="email-help email-error" />
+        <p id="email-help" class="help">We'll use this to contact you about your account.</p>
+        <p id="email-error" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-group password-group">
+        <label for="password">Password</label>
+        <div class="password-row">
+          <input id="password" name="password" type="password" required aria-required="true" aria-describedby="password-help password-error" />
+          <!-- Visual-only toggle in this static version.
+               When JS is added, toggle the input type and update aria-pressed and button text. -->
+          <button
+            type="button"
+            class="toggle-password"
+            aria-pressed="false"
+            aria-controls="password"
+            title="Show password (visual only in this static demo)"
+          >
+            Show
+          </button>
+        </div>
+        <p id="password-help" class="help">Use at least 8 characters, including a number.</p>
+        <p id="password-error" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Confirm password</label>
+        <input id="confirm-password" name="confirmPassword" type="password" required aria-required="true" aria-describedby="confirm-password-error" />
+        <p id="confirm-password-error" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="progress-container">
+        <label for="progress" id="progress-label">Form completeness</label>
+        <progress id="progress" value="0" max="100" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="100">0%</progress>
+      </div>
+
+      <section class="requirements" aria-labelledby="requirements-title">
+        <h3 id="requirements-title">Checklist</h3>
+        <ul class="requirement-list" aria-live="polite">
+          <li class="requirement" aria-checked="false" role="listitem">
+            <span class="req-icon" aria-hidden="true">◻</span>
+            <span class="req-text">Password must be 8+ characters</span>
+          </li>
+          <li class="requirement" aria-checked="false" role="listitem">
+            <span class="req-icon" aria-hidden="true">◻</span>
+            <span class="req-text">Password must include a number</span>
+          </li>
+          <li class="requirement" aria-checked="false" role="listitem">
+            <span class="req-icon" aria-hidden="true">◻</span>
+            <span class="req-text">Passwords must match</span>
+          </li>
+        </ul>
+      </section>
+
+      <div class="actions">
+        <button type="submit" disabled>Create account</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
